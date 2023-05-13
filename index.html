@@ -1,13 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello, world!</h1>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Projectile Motion</title>
+	</head>
+	<body>
+		<div class="col-flex">
+			<h1 class="header">Projectile Motion Simulation</h1>
+			<main class="col-flex">
+				<div class="control-plane col-flex">
+					<div class="sliders row-flex">
+						<div class="slider">
+							<div class="row-flex">
+								<label for="distance">Distance =&nbsp;</label>
+								<p id="distance-value">0</p>
+								<p>&nbsp;m</p>
+							</div>
+							<input
+								id="distance-input"
+								type="range"
+								min="0"
+								max="100"
+								value="0"
+								step="0.01"
+							/>
+						</div>
+
+						<div class="slider">
+							<div class="row-flex">
+								<label for="angle">Firing angle =&nbsp;</label>
+								<p id="angle-value">0</p> 
+                                </p>&nbsp;deg</p>
+							</div>
+
+							<input
+								id="angle-input"
+								type="range"
+								min="0"
+								max="90"
+								value="0"
+								step="1"
+							/>
+						</div>
+
+						<div class="slider">
+							<div class="row-flex">
+								<label for="velocity">Firing velocity =&nbsp;</label>
+								<p id="velocity-value">0</p>
+								<p>&nbsp;m/s</p>
+							</div>
+							<input
+								id="velocity-input"
+								type="range"
+								min="0"
+								max="100"
+								value="0"
+								step="0.01"
+							/>
+						</div>
+					</div>
+
+					<div class="col-row buttons">
+						<button class="button start-btn" role="button">Start</button>
+						<button class="button reset-btn" role="button">Reset</button>
+
+					</div>
+
+					<!-- <article class="max">
+						<p>Maximum Height =</p>
+						<p class="maxH">0</p>
+						<p>&nbsp;m</p>
+					</article>
+					<article class="goal">
+						<p>Height from the Goal =</p>
+						<p class="goalH">0</p>
+						<p>&nbsp;m</p>
+					</article> -->
+				</div>
+				<div class="simulation">
+					<div class="score current-score">
+						score<br><span></span>
+					  </div>
+					  <div class="score high-score">
+						high score<br><span></span>
+					  </div>
+				</div>
+			</main>
+		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.js"
+			integrity="sha512-rsntMCBgWYEWKl4HtqWmQ3vdHgvSq8CTtJd19YL7lCtKokLPWt7UEoHVabK1uiNfUdaLit8O090no5BZjcz+bw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="app.js"></script>
+	</body>
 </html>
