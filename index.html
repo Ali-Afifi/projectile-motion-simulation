@@ -9,31 +9,37 @@
 	</head>
 	<body>
 		<div class="col-flex">
-			<h1 class="header">Projectile Motion Simulation</h1>
+			<header>
+				<h1 class="header">Projectile Motion Simulation</h1>
+			</header>
 			<main class="col-flex">
 				<div class="control-plane col-flex">
 					<div class="sliders row-flex">
 						<div class="slider">
 							<div class="row-flex">
-								<label for="distance">Distance =&nbsp;</label>
-								<p id="distance-value">0</p>
+								<label for="distance-input"
+									>Distance =&nbsp;</label
+								>
+								<p id="distance-value">25</p>
 								<p>&nbsp;m</p>
 							</div>
 							<input
 								id="distance-input"
 								type="range"
-								min="0"
+								min="25"
 								max="100"
-								value="0"
+								value="25"
 								step="0.01"
 							/>
 						</div>
 
 						<div class="slider">
 							<div class="row-flex">
-								<label for="angle">Firing angle =&nbsp;</label>
-								<p id="angle-value">0</p> 
-                                </p>&nbsp;deg</p>
+								<label for="angle-input"
+									>Firing angle =&nbsp;</label
+								>
+								<p id="angle-value">0</p>
+								<p>&nbsp;deg</p>
 							</div>
 
 							<input
@@ -48,7 +54,9 @@
 
 						<div class="slider">
 							<div class="row-flex">
-								<label for="velocity">Firing velocity =&nbsp;</label>
+								<label for="velocity-input"
+									>Firing velocity =&nbsp;</label
+								>
 								<p id="velocity-value">0</p>
 								<p>&nbsp;m/s</p>
 							</div>
@@ -58,15 +66,18 @@
 								min="0"
 								max="100"
 								value="0"
-								step="0.01"
+								step="0.1"
 							/>
 						</div>
 					</div>
 
 					<div class="col-row buttons">
-						<button class="button start-btn" role="button">Start</button>
-						<button class="button reset-btn" role="button">Reset</button>
-
+						<button class="button" id="start-btn" role="button">
+							Start
+						</button>
+						<button class="button" id="reset-btn" role="button">
+							Reset
+						</button>
 					</div>
 
 					<!-- <article class="max">
@@ -80,13 +91,15 @@
 						<p>&nbsp;m</p>
 					</article> -->
 				</div>
-				<div class="simulation">
-					<div class="score current-score">
-						score<br><span></span>
-					  </div>
-					  <div class="score high-score">
-						high score<br><span></span>
-					  </div>
+				<div class="simulation" id="simulation">
+					<div class="score max-height">
+						Maximum Height =<span id="max-height"> 0</span>m
+					</div>
+					<div class="score height-from-goal">
+						Height From Goal Line=
+						<span id="height-from-goal"> 0</span>m
+					</div>
+					<!-- <canvas id="matterjs-canvas" width="800" height="500"></canvas> -->
 				</div>
 			</main>
 		</div>
