@@ -141,6 +141,8 @@ function startAnimation() {
 		h_max = v0 * Math.sin(theta) * t1 - 0.5 * 9.8 * t1 ** 2;
 		t2 = d / (v0 * Math.cos(theta));
 		h_goal = h_max - 0.5 * 9.8 * (t2 - t1) ** 2;
+		h_goal = h_goal < 0 ? h_goal * -1 : h_goal;
+
 		maxHeight.textContent = h_max.toFixed(2);
 		heightFromGoal.textContent = h_goal.toFixed(2);
 
@@ -196,14 +198,14 @@ function resetAnimation() {
 	distanceValue.textContent = 25;
 	maxHeight.textContent = " 0";
 	heightFromGoal.textContent = " 0";
-	
-	d = 25; 
-	theta = 0; 
-	v0 = 0; 
-	t1 = 0; 
-	h_max = 0; 
-	t2 = 0; 
-	h_goal = 0; 
+
+	d = 25;
+	theta = 0;
+	v0 = 0;
+	t1 = 0;
+	h_max = 0;
+	t2 = 0;
+	h_goal = 0;
 	trail = [];
 
 	Body.setPosition(ball, { x: 825, y: 420 });
