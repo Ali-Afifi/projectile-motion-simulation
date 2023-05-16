@@ -198,7 +198,7 @@ function resetAnimation() {
 	heightFromGoal.textContent = " 0";
 	v0 = 0;
 	theta = 0;
-	d = 0;
+	d = 25;
 	trail = [];
 	Body.setPosition(ball, { x: 825, y: 420 });
 	Body.setVelocity(ball, { x: v0, y: v0 });
