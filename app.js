@@ -196,10 +196,16 @@ function resetAnimation() {
 	distanceValue.textContent = 25;
 	maxHeight.textContent = " 0";
 	heightFromGoal.textContent = " 0";
-	v0 = 0;
-	theta = 0;
-	d = 25;
+	
+	d = 25; 
+	theta = 0; 
+	v0 = 0; 
+	t1 = 0; 
+	h_max = 0; 
+	t2 = 0; 
+	h_goal = 0; 
 	trail = [];
+
 	Body.setPosition(ball, { x: 825, y: 420 });
 	Body.setVelocity(ball, { x: v0, y: v0 });
 	Events.off(render, "afterRender", addingPath);
